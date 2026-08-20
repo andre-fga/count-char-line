@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "Gerar Relatorio de Caracteres por Linha",
+        "command": "generate_line_char_report"
+    }
+]
