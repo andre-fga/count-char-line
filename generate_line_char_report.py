@@ -25,20 +25,20 @@ class GenerateLineCharReportCommand(sublime_plugin.TextCommand):
         # Monta o cabeçalho com o agrupamento de contagens
         report = []
         report.append("=" * 60)
-        report.append(" RELATÓRIO DE CONTAGEM DE CARACTERES POR LINHA")
+        report.append(" CHARACTER COUNT PER LINE REPORT ")
         report.append("=" * 60)
-        report.append(f"Total de Linhas: {total_lines}")
-        report.append("\n--- RESUMO DE FREQUÊNCIA (AGRUPAMENTO) ---")
-        report.append("Tamanho (chars)  |  Qtd de Linhas")
+        report.append(f"Lines: {total_lines}")
+        report.append("\n--- FREQUENCY SUMMARY (GROUPING) ---")
+        report.append("Size (chars)  |  Number of Lines")
         report.append("-" * 40)
 
         # Ordena do menor tamanho para o maior
         for length in sorted(length_counts.keys()):
             count = length_counts[length]
-            report.append(f"{length:>15} chars  ->  {count} linha(s)")
+            report.append(f"{length:>15} chars  ->  {count} lines")
 
         report.append("\n" + "=" * 60)
-        report.append(" DETALHAMENTO LINHA A LINHA")
+        report.append(" Line-by-line breakdown ")
         report.append("=" * 60 + "\n")
         report.extend(detailed_lines)
 
